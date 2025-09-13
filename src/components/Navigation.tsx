@@ -15,8 +15,8 @@ const Navigation = () => {
     { name: 'Home', hasDropdown: true },
     { name: 'Resume', hasDropdown: true },
     { name: 'Portfolio', hasDropdown: false },
-    { name: 'Blog', hasDropdown: false },
-    { name: 'Contacts', hasDropdown: true },
+    { name: 'Skills', hasDropdown: false },
+    { name: 'Contacts', hasDropdown: true }
   ]
 
   // Close dropdown when clicking outside
@@ -82,8 +82,8 @@ const Navigation = () => {
                 // Handle direct navigation for items without dropdowns
                 if (item.name === 'Portfolio') {
                   handleNavigation('/portfolio')
-                } else if (item.name === 'Blog') {
-                  handleNavigation('/blog')
+                } else if (item.name === 'Skills') {
+                  handleNavigation('/skills')
                 }
               }
             }}

@@ -317,6 +317,22 @@ body {
   animation: slide-right 1600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Skills Page Animations */
+.skill-bar {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fillBar 1.5s ease-out forwards;
+}
+
+@keyframes fillBar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 .project-overlay-enter {
   animation: slideInFromBottom 0.7s ease-out forwards;
 }

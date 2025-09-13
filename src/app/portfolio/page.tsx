@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Header from '@/components/Header'
 import ScrollAnimatedSection from '@/components/ScrollAnimatedSection'
 import ProjectCard from '@/components/ProjectCard'
+import AIAnimation from '@/components/AIAnimation'
 import { ExternalLink, Github, Calendar, Tag } from 'lucide-react'
 import Image from 'next/image'
 
@@ -191,6 +192,13 @@ export default function Portfolio() {
                         ×
                       </button>
                     </div>
+
+                    {/* AI Animation for AI Chat Bot Project */}
+                    {project.id === 1 && (
+                      <div className="mb-8">
+                        <AIAnimation className="mb-6" />
+                      </div>
+                    )}
 
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>

@@ -1,10 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 import Header from '@/components/Header'
 import SocialIcons from '@/components/SocialIcons'
 import TypewriterText from '@/components/TypewriterText'
-import AnimatedCube from '@/components/AnimatedCube'
+import ProfileWithAnimation from '@/components/ProfileWithAnimation'
 
 export default function Home() {
   return (
@@ -19,26 +18,8 @@ export default function Home() {
       <div className="relative z-10 flex items-center min-h-[calc(100vh-100px)] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center w-full max-w-7xl mx-auto gap-8 lg:gap-12">
           
-          {/* Left Side - Profile Image */}
-          <div className="flex-shrink-0 order-2 lg:order-1">
-            <div className="relative">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 relative">
-                <Image
-                  src="/Asad.png"
-                  alt="Asad Profile"
-                  fill
-                  className="object-cover rounded-lg"
-                  priority
-                />
-              </div>
-              
-              {/* Contact Info */}
-              <div className="absolute -left-2 sm:-left-4 bottom-4 sm:bottom-8 bg-black bg-opacity-50 backdrop-blur-sm rounded-lg p-3 sm:p-4 min-w-[180px] sm:min-w-[200px]">
-                <div className="text-xs text-gray-300 mb-1">E: asadarshad.4721@gmail.com</div>
-                <div className="text-xs text-gray-300">T: 03041192980</div>
-              </div>
-            </div>
-          </div>
+          {/* Left Side - Profile with Animation */}
+          <ProfileWithAnimation />
 
           {/* Right Side - Text Content */}
           <div className="flex-1 order-1 lg:order-2 text-center lg:text-left">
@@ -67,9 +48,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Animated Cube */}
-      <AnimatedCube />
 
       {/* Social Icons */}
       <SocialIcons />

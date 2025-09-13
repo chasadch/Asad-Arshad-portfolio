@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Header from '@/components/Header'
 import ScrollAnimatedSection from '@/components/ScrollAnimatedSection'
+import ContactAnimation from '@/components/ContactAnimation'
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react'
 
 interface FormData {
@@ -100,10 +101,13 @@ export default function Contact() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Get In <span className="text-portfolio-green">Touch</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
               Have a project in mind or want to collaborate? I'd love to hear from you. 
               Let's discuss how we can work together to bring your ideas to life.
             </p>
+            
+            {/* Contact Animation */}
+            <ContactAnimation />
           </div>
         </ScrollAnimatedSection>
 
