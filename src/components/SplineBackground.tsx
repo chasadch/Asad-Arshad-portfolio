@@ -22,14 +22,10 @@ export default function SplineBackground() {
       const y = -((e.clientY - rect.top) / rect.height) * 2 + 1
 
       try {
-        // Skip variable setting since they don't exist in the scene
-        
-        // Method 1: Direct object manipulation
         const spline = splineRef.current
         
         // Try to find and move objects directly
         if (spline.findObjectByName) {
-          // Common Spline object names to try
           const objectNames = [
             'Sphere', 'sphere', 'Ball', 'ball', 'Circle', 'circle',
             'Cube', 'cube', 'Box', 'box', 'Mesh', 'mesh',
@@ -40,10 +36,10 @@ export default function SplineBackground() {
             try {
               const obj = spline.findObjectByName(name)
               if (obj && obj.position) {
-                obj.position.x = x * 3
-                obj.position.y = y * 3
+                obj.position.x = x * 4
+                obj.position.y = y * 4
                 obj.position.z = obj.position.z || 0
-                break // Stop after finding first moveable object
+                break
               }
             } catch (err) {
               // Continue to next name
@@ -51,21 +47,19 @@ export default function SplineBackground() {
           }
         }
         
-        // Method 2: Scene traversal for any moveable objects
+        // Scene traversal for any moveable objects
         if (spline.scene) {
           const findAndMoveFirstObject = (obj: any): boolean => {
-            // Try to move this object if it has a position
             if (obj.position && obj.type === 'Mesh') {
-              obj.position.x = x * 3
-              obj.position.y = y * 3
-              return true // Found and moved an object
+              obj.position.x = x * 4
+              obj.position.y = y * 4
+              return true
             }
             
-            // Search children
             if (obj.children) {
               for (const child of obj.children) {
                 if (findAndMoveFirstObject(child)) {
-                  return true // Found object in children
+                  return true
                 }
               }
             }
@@ -86,14 +80,24 @@ export default function SplineBackground() {
   }, [])
 
   return (
-    <div className="relative w-full h-full spline-container">
-      <Suspense fallback={<div className="geometric-bg" />}>
+    <div className="relative w-full h-full spline-container overflow-hidden">
+      <Suspense fallback={
+        <div className="w-full h-full bg-gradient-to-br from-portfolio-dark to-portfolio-gray flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 border-4 border-portfolio-green border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-gray-400">Loading 3D Experience...</p>
+          </div>
+        </div>
+      }>
         <Spline 
           scene="/animate/scene.splinecode"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-all duration-300 hover:scale-105"
           onLoad={onLoad}
         />
       </Suspense>
+      
+      {/* Subtle overlay for better integration */}
+      <div className="absolute inset-0 bg-gradient-to-t from-portfolio-dark via-transparent to-transparent opacity-20 pointer-events-none"></div>
     </div>
   )
 }

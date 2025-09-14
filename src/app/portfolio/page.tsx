@@ -263,14 +263,95 @@ export default function Portfolio() {
         )}
 
 
-        {/* Spline Animation Section */}
+        {/* Interactive 3D Experience Section */}
         <ScrollAnimatedSection delay={800} direction="fade">
-          <div className="relative h-96 mb-16 rounded-xl overflow-hidden">
-            <SplineBackground />
-            <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-2 text-white">Interactive 3D Experience</h3>
-                <p className="text-gray-200">Move your cursor to interact with the animation</p>
+          <div className="relative mb-20">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Interactive <span className="text-portfolio-green">3D Experience</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                Move your cursor to interact with the 3D animation and explore the immersive experience
+              </p>
+            </div>
+
+            {/* 3D Animation Container */}
+            <div className="relative group">
+              {/* Gradient Border Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-portfolio-green via-blue-500 to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+              
+              {/* Main Animation Container */}
+              <div className="relative bg-portfolio-gray bg-opacity-20 backdrop-blur-sm rounded-2xl overflow-hidden border border-portfolio-gray border-opacity-30">
+                {/* Responsive Height Container */}
+                <div className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem] xl:h-[32rem]">
+                  <SplineBackground />
+                  
+                  {/* Overlay with Instructions */}
+                  <div className="absolute top-4 left-4 right-4 z-10">
+                    <div className="bg-black bg-opacity-40 backdrop-blur-sm rounded-lg px-4 py-3 border border-white border-opacity-20">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-portfolio-green rounded-full animate-pulse"></div>
+                          <span className="text-white text-sm font-medium">Interactive Mode</span>
+                        </div>
+                        <span className="text-gray-300 text-xs hidden sm:block">Move cursor to control</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Corner Decorations */}
+                  <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-portfolio-green opacity-30 rounded-tl-2xl"></div>
+                  <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-portfolio-green opacity-30 rounded-tr-2xl"></div>
+                  <div className="absolute bottom-0 left-0 w-20 h-20 border-l-2 border-b-2 border-portfolio-green opacity-30 rounded-bl-2xl"></div>
+                  <div className="absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 border-portfolio-green opacity-30 rounded-br-2xl"></div>
+                </div>
+
+                {/* Bottom Info Bar */}
+                <div className="bg-portfolio-gray bg-opacity-40 backdrop-blur-sm px-6 py-4 border-t border-portfolio-gray border-opacity-30">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                        <span className="text-sm text-gray-300">Real-time Interaction</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                        <span className="text-sm text-gray-300">3D Animation</span>
+                      </div>
+                    </div>
+                    <div className="text-xs text-gray-400 text-center sm:text-right">
+                      Built with Spline & React
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid md:grid-cols-3 gap-6 mt-12">
+              <div className="bg-portfolio-gray bg-opacity-20 backdrop-blur-sm rounded-xl p-6 border border-portfolio-gray border-opacity-30 hover:border-portfolio-green hover:border-opacity-50 transition-all duration-300">
+                <div className="w-12 h-12 bg-portfolio-green bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-6 h-6 bg-portfolio-green rounded-sm"></div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-white">Cursor Tracking</h3>
+                <p className="text-gray-400 text-sm">Objects respond to your mouse movement in real-time</p>
+              </div>
+
+              <div className="bg-portfolio-gray bg-opacity-20 backdrop-blur-sm rounded-xl p-6 border border-portfolio-gray border-opacity-30 hover:border-blue-500 hover:border-opacity-50 transition-all duration-300">
+                <div className="w-12 h-12 bg-blue-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-white">3D Physics</h3>
+                <p className="text-gray-400 text-sm">Smooth animations with realistic movement patterns</p>
+              </div>
+
+              <div className="bg-portfolio-gray bg-opacity-20 backdrop-blur-sm rounded-xl p-6 border border-portfolio-gray border-opacity-30 hover:border-purple-500 hover:border-opacity-50 transition-all duration-300">
+                <div className="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-6 h-6 bg-purple-500 rounded-lg"></div>
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-white">Immersive Design</h3>
+                <p className="text-gray-400 text-sm">Modern glassmorphism with stunning visual effects</p>
               </div>
             </div>
           </div>
