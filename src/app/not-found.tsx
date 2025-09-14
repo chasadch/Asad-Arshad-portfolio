@@ -93,12 +93,12 @@ export default function NotFound() {
           }`}
           style={{ transitionDelay: '1500ms' }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 mt-32">
-            Oops! <span className="text-portfolio-green">Page Not Found</span>
-          </h1>
-          
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl">
-            The page you're looking for seems to have fallen off the internet. 
+          <h1 className="text-6xl md:text-8xl font-bold text-portfolio-green mb-8">404</h1>
+          <h2 className="text-2xl md:text-4xl font-bold mb-4">Oops! Page Not Found</h2>
+          <p className="text-lg text-gray-400 mb-8 max-w-md mx-auto">
+            The page you&apos;re looking for doesn&apos;t exist. It might have been moved, deleted, or you entered the wrong URL.
+          </p>
+          <p className="text-lg text-gray-400 mb-8 max-w-md mx-auto">
             Don't worry, it happens to the best of us!
           </p>
           

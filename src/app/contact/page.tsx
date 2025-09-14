@@ -72,7 +72,7 @@ export default function Contact() {
       
       setStatus({
         type: 'success',
-        message: 'Thank you for your message! I\'ll get back to you soon.'
+        message: 'Thank you for your message! I&apos;ll get back to you soon.'
       })
       
       // Reset form
@@ -102,8 +102,8 @@ export default function Contact() {
               Get In <span className="text-portfolio-green">Touch</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Have a project in mind or want to collaborate? I'd love to hear from you. 
-              Let's discuss how we can work together to bring your ideas to life.
+              Have a project in mind or want to collaborate? I&apos;d love to hear from you. 
+              Let&apos;s discuss how we can work together to bring your ideas to life.
             </p>
             
             {/* Contact Animation */}
@@ -118,7 +118,7 @@ export default function Contact() {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Let's Start a Conversation</h2>
                 <p className="text-gray-300 text-lg mb-8">
-                  I'm always excited to take on new challenges and collaborate with amazing people. 
+                  I&apos;m always excited to take on new challenges and collaborate with amazing people. 
                   Whether you have a specific project in mind or just want to connect, feel free to reach out.
                 </p>
               </div>
@@ -160,7 +160,7 @@ export default function Contact() {
               <div className="p-6 bg-portfolio-green bg-opacity-10 border border-portfolio-green border-opacity-30 rounded-lg">
                 <h3 className="font-semibold text-lg mb-2 text-portfolio-green">Current Availability</h3>
                 <p className="text-gray-300">
-                  I'm currently available for new projects and collaborations. 
+                  I&apos;m currently available for new projects and collaborations. 
                   Typical response time is within 24 hours.
                 </p>
               </div>
@@ -287,7 +287,7 @@ export default function Contact() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-6">
-                <h3 className="font-semibold text-lg mb-3 text-portfolio-green">What's your typical response time?</h3>
+                <h3 className="font-semibold text-lg mb-3 text-portfolio-green">What&apos;s your typical response time?</h3>
                 <p className="text-gray-300">
                   I usually respond to inquiries within 24 hours during business days. 
                   For urgent matters, feel free to mention it in your message.
@@ -306,14 +306,14 @@ export default function Contact() {
                 <h3 className="font-semibold text-lg mb-3 text-portfolio-green">What technologies do you specialize in?</h3>
                 <p className="text-gray-300">
                   I specialize in modern web technologies including React, Next.js, Node.js, 
-                  and AI/ML integration. I'm always learning new technologies to stay current.
+                  and AI/ML integration. I&apos;m always learning new technologies to stay current.
                 </p>
               </div>
               
               <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-6">
                 <h3 className="font-semibold text-lg mb-3 text-portfolio-green">Do you offer ongoing support?</h3>
                 <p className="text-gray-300">
-                  Yes! I provide ongoing support and maintenance for projects I've worked on. 
+                  Yes! I provide ongoing support and maintenance for projects I&apos;ve worked on. 
                   We can discuss support options based on your specific needs.
                 </p>
               </div>

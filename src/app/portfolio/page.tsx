@@ -205,6 +205,13 @@ export default function Portfolio() {
                         <h3 className="text-xl font-semibold mb-4 text-portfolio-green">Project Overview</h3>
                         <p className="text-gray-300 mb-6">{project.longDescription}</p>
 
+                        <h2 className="text-3xl font-bold mb-4">
+              Ready to Start Your Next Project?
+            </h2>
+            <p className="text-gray-300 mb-8">
+              Let&apos;s work together to bring your ideas to life with cutting-edge technology and innovative solutions.
+            </p>
+
                         <h3 className="text-xl font-semibold mb-4 text-portfolio-green">Key Features</h3>
                         <ul className="space-y-2 mb-6">
                           {project.features.map((feature, index) => (
@@ -261,8 +268,8 @@ export default function Portfolio() {
               Interested in <span className="text-portfolio-green">Working Together</span>?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities and exciting projects. 
-              Let's create something amazing together!
+              I&apos;m always open to discussing new opportunities and exciting projects. 
+              Let&apos;s create something amazing together!
             </p>
             <a
               href="/contact"
