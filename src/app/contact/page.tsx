@@ -94,14 +94,14 @@ export default function Contact() {
     <div className="min-h-screen bg-portfolio-dark text-white">
       <Header />
       
-      <div className="container mx-auto px-6 py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         {/* Header Section */}
         <ScrollAnimatedSection delay={200} direction="fade">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Get In <span className="text-portfolio-green">Touch</span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-6 sm:mb-8 px-4 sm:px-0">
               Have a project in mind or want to collaborate? I&apos;d love to hear from you. 
               Let&apos;s discuss how we can work together to bring your ideas to life.
             </p>
@@ -111,55 +111,55 @@ export default function Contact() {
           </div>
         </ScrollAnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
           <ScrollAnimatedSection delay={400} direction="left">
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Let&apos;s Start a Conversation</h2>
-                <p className="text-gray-300 text-lg mb-8">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Let&apos;s Start a Conversation</h2>
+                <p className="text-gray-300 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
                   I&apos;m always excited to take on new challenges and collaborate with amazing people. 
                   Whether you have a specific project in mind or just want to connect, feel free to reach out.
                 </p>
               </div>
 
               {/* Contact Details */}
-              <div className="space-y-6">
-                <div className="flex items-center gap-4 p-4 bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg">
-                  <div className="w-12 h-12 bg-portfolio-green bg-opacity-20 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-portfolio-green" />
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-portfolio-green bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-portfolio-green" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">Email</h3>
-                    <p className="text-gray-300">asadarshad.4721@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 p-4 bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg">
-                  <div className="w-12 h-12 bg-portfolio-green bg-opacity-20 rounded-lg flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-portfolio-green" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">Phone</h3>
-                    <p className="text-gray-300">03041192980</p>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-semibold text-base sm:text-lg">Email</h3>
+                    <p className="text-gray-300 text-sm sm:text-base break-all">asadarshad.4721@gmail.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg">
-                  <div className="w-12 h-12 bg-portfolio-green bg-opacity-20 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-portfolio-green" />
+                <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-portfolio-green bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-portfolio-green" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">Location</h3>
-                    <p className="text-gray-300">Islamabad, Pakistan</p>
+                    <h3 className="font-semibold text-base sm:text-lg">Phone</h3>
+                    <p className="text-gray-300 text-sm sm:text-base">03041192980</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-portfolio-green bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-portfolio-green" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-base sm:text-lg">Location</h3>
+                    <p className="text-gray-300 text-sm sm:text-base">Islamabad, Pakistan</p>
                   </div>
                 </div>
               </div>
 
               {/* Availability */}
-              <div className="p-6 bg-portfolio-green bg-opacity-10 border border-portfolio-green border-opacity-30 rounded-lg">
-                <h3 className="font-semibold text-lg mb-2 text-portfolio-green">Current Availability</h3>
-                <p className="text-gray-300">
+              <div className="p-4 sm:p-6 bg-portfolio-green bg-opacity-10 border border-portfolio-green border-opacity-30 rounded-lg">
+                <h3 className="font-semibold text-base sm:text-lg mb-2 text-portfolio-green">Current Availability</h3>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                   I&apos;m currently available for new projects and collaborations. 
                   Typical response time is within 24 hours.
                 </p>
@@ -169,11 +169,21 @@ export default function Contact() {
 
           {/* Contact Form */}
           <ScrollAnimatedSection delay={600} direction="right">
-            <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-xl p-8">
-              <h2 className="text-2xl font-bold mb-6">Send Me a Message</h2>
+            <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-xl p-4 sm:p-6 lg:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Send a Message</h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+              {status.message && (
+                <div className={`p-3 sm:p-4 rounded-lg mb-4 sm:mb-6 ${
+                  status.type === 'success' 
+                    ? 'bg-green-500 bg-opacity-20 border border-green-500 border-opacity-30 text-green-300' 
+                    : 'bg-red-500 bg-opacity-20 border border-red-500 border-opacity-30 text-red-300'
+                }`}>
+                  <p className="text-sm sm:text-base">{status.message}</p>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
                       Name *
@@ -182,11 +192,11 @@ export default function Contact() {
                       type="text"
                       id="name"
                       name="name"
+                      required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-portfolio-dark bg-opacity-50 border border-gray-600 rounded-lg focus:border-portfolio-green focus:outline-none transition-colors"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-portfolio-dark border border-gray-600 rounded-lg focus:ring-2 focus:ring-portfolio-green focus:border-transparent transition-all duration-300 text-white placeholder-gray-400 text-sm sm:text-base"
                       placeholder="Your full name"
-                      required
                     />
                   </div>
                   
@@ -198,26 +208,27 @@ export default function Contact() {
                       type="email"
                       id="email"
                       name="email"
+                      required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-portfolio-dark bg-opacity-50 border border-gray-600 rounded-lg focus:border-portfolio-green focus:outline-none transition-colors"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-portfolio-dark border border-gray-600 rounded-lg focus:ring-2 focus:ring-portfolio-green focus:border-transparent transition-all duration-300 text-white placeholder-gray-400 text-sm sm:text-base"
                       placeholder="your.email@example.com"
-                      required
                     />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                    Subject
+                    Subject *
                   </label>
                   <input
                     type="text"
                     id="subject"
                     name="subject"
+                    required
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-portfolio-dark bg-opacity-50 border border-gray-600 rounded-lg focus:border-portfolio-green focus:outline-none transition-colors"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-portfolio-dark border border-gray-600 rounded-lg focus:ring-2 focus:ring-portfolio-green focus:border-transparent transition-all duration-300 text-white placeholder-gray-400 text-sm sm:text-base"
                     placeholder="What's this about?"
                   />
                 </div>
@@ -229,48 +240,27 @@ export default function Contact() {
                   <textarea
                     id="message"
                     name="message"
+                    required
+                    rows={5}
                     value={formData.message}
                     onChange={handleInputChange}
-                    rows={6}
-                    className="w-full px-4 py-3 bg-portfolio-dark bg-opacity-50 border border-gray-600 rounded-lg focus:border-portfolio-green focus:outline-none transition-colors resize-vertical"
-                    placeholder="Tell me about your project or how I can help you..."
-                    required
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-portfolio-dark border border-gray-600 rounded-lg focus:ring-2 focus:ring-portfolio-green focus:border-transparent transition-all duration-300 text-white placeholder-gray-400 resize-vertical text-sm sm:text-base"
+                    placeholder="Tell me about your project or idea..."
                   />
                 </div>
-
-                {/* Status Message */}
-                {status.type !== 'idle' && (
-                  <div className={`flex items-center gap-3 p-4 rounded-lg ${
-                    status.type === 'success' 
-                      ? 'bg-green-500 bg-opacity-20 text-green-400 border border-green-500 border-opacity-30'
-                      : status.type === 'error'
-                      ? 'bg-red-500 bg-opacity-20 text-red-400 border border-red-500 border-opacity-30'
-                      : 'bg-blue-500 bg-opacity-20 text-blue-400 border border-blue-500 border-opacity-30'
-                  }`}>
-                    {status.type === 'success' && <CheckCircle className="w-5 h-5" />}
-                    {status.type === 'error' && <AlertCircle className="w-5 h-5" />}
-                    {status.type === 'loading' && (
-                      <div className="w-5 h-5 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
-                    )}
-                    <span>{status.message}</span>
-                  </div>
-                )}
 
                 <button
                   type="submit"
                   disabled={status.type === 'loading'}
-                  className="w-full bg-portfolio-green hover:bg-opacity-80 disabled:bg-opacity-50 text-portfolio-dark px-6 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full bg-portfolio-green hover:bg-portfolio-green-dark text-portfolio-dark font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 text-sm sm:text-base"
                 >
                   {status.type === 'loading' ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-portfolio-dark border-t-transparent rounded-full animate-spin" />
+                    <span className="flex items-center justify-center gap-2">
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-portfolio-dark border-t-transparent rounded-full animate-spin"></div>
                       Sending...
-                    </>
+                    </span>
                   ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      Send Message
-                    </>
+                    'Send Message'
                   )}
                 </button>
               </form>
@@ -280,41 +270,50 @@ export default function Contact() {
 
         {/* FAQ Section */}
         <ScrollAnimatedSection delay={800} direction="up">
-          <div className="mt-20 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">
+          <div className="mt-12 sm:mt-16 lg:mt-20 max-w-4xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12">
               Frequently Asked <span className="text-portfolio-green">Questions</span>
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-6">
-                <h3 className="font-semibold text-lg mb-3 text-portfolio-green">What&apos;s your typical response time?</h3>
-                <p className="text-gray-300">
-                  I usually respond to inquiries within 24 hours during business days. 
-                  For urgent matters, feel free to mention it in your message.
+            <div className="space-y-4 sm:space-y-6">
+              <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-portfolio-green">
+                  What&apos;s your typical project timeline?
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+                  Project timelines vary depending on scope and complexity. A simple website might take 2-3 weeks, 
+                  while a complex web application could take 2-3 months. I always provide detailed timelines during 
+                  our initial consultation.
                 </p>
               </div>
-              
-              <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-6">
-                <h3 className="font-semibold text-lg mb-3 text-portfolio-green">Do you work on small projects?</h3>
-                <p className="text-gray-300">
-                  Absolutely! I enjoy working on projects of all sizes, from small websites 
-                  to complex web applications. Every project is an opportunity to create something amazing.
+
+              <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-portfolio-green">
+                  Do you work with international clients?
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+                  Absolutely! I work with clients worldwide and am comfortable with different time zones. 
+                  I use various communication tools to ensure smooth collaboration regardless of location.
                 </p>
               </div>
-              
-              <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-6">
-                <h3 className="font-semibold text-lg mb-3 text-portfolio-green">What technologies do you specialize in?</h3>
-                <p className="text-gray-300">
-                  I specialize in modern web technologies including React, Next.js, Node.js, 
-                  and AI/ML integration. I&apos;m always learning new technologies to stay current.
+
+              <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-portfolio-green">
+                  What technologies do you specialize in?
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+                  I specialize in modern web technologies including React, Next.js, TypeScript, Node.js, 
+                  and various databases. I&apos;m always learning new technologies to stay current with industry trends.
                 </p>
               </div>
-              
-              <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-6">
-                <h3 className="font-semibold text-lg mb-3 text-portfolio-green">Do you offer ongoing support?</h3>
-                <p className="text-gray-300">
-                  Yes! I provide ongoing support and maintenance for projects I&apos;ve worked on. 
-                  We can discuss support options based on your specific needs.
+
+              <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-portfolio-green">
+                  Do you provide ongoing support?
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+                  Yes! I offer various support packages including bug fixes, feature updates, and maintenance. 
+                  We can discuss the best support option for your project during our consultation.
                 </p>
               </div>
             </div>

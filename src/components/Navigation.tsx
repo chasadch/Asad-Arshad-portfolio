@@ -66,7 +66,7 @@ const Navigation = () => {
   }
 
   return (
-    <nav className="flex items-center space-x-4 sm:space-x-6 lg:space-x-8">
+    <nav className="flex items-center space-x-2 sm:space-x-4 lg:space-x-6">
       {navItems.map((item) => (
         <div
           key={item.name}
@@ -87,9 +87,9 @@ const Navigation = () => {
                 }
               }
             }}
-            className="flex items-center space-x-1 text-white hover:text-portfolio-green transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(0,255,136,0.5)]"
+            className="flex items-center space-x-1 text-white hover:text-portfolio-green transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(0,255,136,0.5)] px-2 py-1 rounded-md"
           >
-            <span className="text-xs sm:text-sm font-medium">{item.name}</span>
+            <span className="text-xs sm:text-sm lg:text-base font-medium whitespace-nowrap">{item.name}</span>
             {item.hasDropdown && (
               <ChevronDown className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-200 ${
                 activeDropdown === item.name ? 'rotate-180' : ''
@@ -98,20 +98,20 @@ const Navigation = () => {
           </button>
           
           {item.hasDropdown && activeDropdown === item.name && (
-            <div className="absolute top-full left-0 mt-2 w-48 bg-portfolio-gray rounded-lg shadow-xl py-2 z-[9999]">
+            <div className="absolute top-full left-0 mt-2 w-40 sm:w-48 bg-portfolio-gray rounded-lg shadow-xl py-2 z-[9999] border border-portfolio-gray border-opacity-30">
               {item.name === 'Resume' && (
                 <>
-                  <button onClick={() => handleNavigation('/resume')} className="block w-full text-left px-4 py-2 text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
+                  <button onClick={() => handleNavigation('/resume')} className="block w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
                     View Resume
                   </button>
-                  <a href="/Resume/Asad Arshad CV.pdf" download className="block px-4 py-2 text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
+                  <a href="/Resume/Asad Arshad CV.pdf" download className="block px-3 sm:px-4 py-2 text-xs sm:text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
                     Download PDF
                   </a>
                 </>
               )}
               {item.name === 'Home' && (
                 <>
-                  <button onClick={() => handleNavigation('/')} className="block w-full text-left px-4 py-2 text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
+                  <button onClick={() => handleNavigation('/')} className="block w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
                     Landing Page
                   </button>
                   <button 
@@ -139,7 +139,7 @@ const Navigation = () => {
                         }
                       }
                     }} 
-                    className="block w-full text-left px-4 py-2 text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors"
+                    className="block w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors"
                   >
                     About Me
                   </button>
@@ -147,10 +147,10 @@ const Navigation = () => {
               )}
               {item.name === 'Contacts' && (
                 <>
-                  <a href="mailto:asadarshad.4721@gmail.com" className="block px-4 py-2 text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
+                  <a href="mailto:asadarshad.4721@gmail.com" className="block px-3 sm:px-4 py-2 text-xs sm:text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
                     Email Me
                   </a>
-                  <button onClick={() => handleNavigation('/contact')} className="block w-full text-left px-4 py-2 text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
+                  <button onClick={() => handleNavigation('/contact')} className="block w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
                     Contact Form
                   </button>
                 </>
