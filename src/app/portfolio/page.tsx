@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import ScrollAnimatedSection from '@/components/ScrollAnimatedSection'
 import ProjectCard from '@/components/ProjectCard'
 import AIAnimation from '@/components/AIAnimation'
+import SplineBackground from '@/components/SplineBackground'
 import { ExternalLink, Github, Calendar, Tag } from 'lucide-react'
 import Image from 'next/image'
 
@@ -260,6 +261,20 @@ export default function Portfolio() {
             </div>
           </div>
         )}
+
+
+        {/* Spline Animation Section */}
+        <ScrollAnimatedSection delay={800} direction="fade">
+          <div className="relative h-96 mb-16 rounded-xl overflow-hidden">
+            <SplineBackground />
+            <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-2 text-white">Interactive 3D Experience</h3>
+                <p className="text-gray-200">Move your cursor to interact with the animation</p>
+              </div>
+            </div>
+          </div>
+        </ScrollAnimatedSection>
 
         {/* Call to Action */}
         <ScrollAnimatedSection delay={1000} direction="fade">
