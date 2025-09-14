@@ -116,7 +116,7 @@ export default function Contact() {
           <ScrollAnimatedSection delay={400} direction="left">
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Let's Start a Conversation</h2>
+                <h2 className="text-3xl font-bold mb-6">Let&apos;s Start a Conversation</h2>
                 <p className="text-gray-300 text-lg mb-8">
                   I&apos;m always excited to take on new challenges and collaborate with amazing people. 
                   Whether you have a specific project in mind or just want to connect, feel free to reach out.

@@ -99,7 +99,7 @@ export default function NotFound() {
             The page you&apos;re looking for doesn&apos;t exist. It might have been moved, deleted, or you entered the wrong URL.
           </p>
           <p className="text-lg text-gray-400 mb-8 max-w-md mx-auto">
-            Don't worry, it happens to the best of us!
+            Don&apos;t worry, it happens to the best of us!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
