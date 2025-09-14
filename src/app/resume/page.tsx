@@ -286,9 +286,9 @@ export default function Resume() {
               </ScrollAnimatedSection>
               
               <ScrollAnimatedSection delay={2800} direction="right">
-                <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-6">
-                  <h4 className="font-semibold text-lg mb-2">AI Voice Agent</h4>
-                  <p className="text-gray-300 mb-3">
+                <div className="bg-portfolio-gray bg-opacity-30 backdrop-blur-sm rounded-lg p-4 sm:p-6">
+                  <h4 className="font-semibold text-base sm:text-lg mb-2">AI Voice Agent</h4>
+                  <p className="text-gray-300 mb-3 text-sm sm:text-base leading-relaxed">
                     Engineered a voice-activated system using Python, Speech Recognition, and gTTS for seamless bidirectional communication. Integrated Twilio API for phone calls, email automation, web scraping, and natural language processing.
                   </p>
                   <div className="flex flex-wrap gap-2">
