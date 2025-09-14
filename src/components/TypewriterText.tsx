@@ -58,7 +58,7 @@ const TypewriterText = ({
 
   return (
     <span className="relative text-white">
-      {currentText}
+      <span dangerouslySetInnerHTML={{ __html: currentText }} />
       <span 
         className={`inline-block w-2 h-20 bg-portfolio-green ml-2 ${
           showCursor ? 'opacity-100' : 'opacity-0'

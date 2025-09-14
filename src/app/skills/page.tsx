@@ -7,53 +7,81 @@ import ScrollAnimatedSection from '@/components/ScrollAnimatedSection'
 
 const skillCategories = [
   {
-    title: "Programming Languages",
-    skills: [
-      { name: "Python", level: 95, color: "from-blue-500 to-yellow-500" },
-      { name: "JavaScript", level: 90, color: "from-yellow-400 to-orange-500" },
-      { name: "TypeScript", level: 85, color: "from-blue-600 to-blue-400" },
-      { name: "Java", level: 80, color: "from-red-500 to-orange-600" },
-      { name: "C++", level: 75, color: "from-purple-500 to-pink-500" },
-    ]
-  },
-  {
-    title: "AI/ML & Data Science",
-    skills: [
-      { name: "Machine Learning", level: 95, color: "from-green-500 to-teal-500" },
-      { name: "Deep Learning", level: 90, color: "from-indigo-500 to-purple-500" },
-      { name: "TensorFlow", level: 85, color: "from-orange-500 to-red-500" },
-      { name: "PyTorch", level: 85, color: "from-red-500 to-pink-500" },
-      { name: "Pandas", level: 90, color: "from-blue-500 to-cyan-500" },
-      { name: "NumPy", level: 90, color: "from-cyan-500 to-blue-500" },
-      { name: "Scikit-learn", level: 85, color: "from-yellow-500 to-orange-500" },
-    ]
-  },
-  {
     title: "Web Development",
+    description: "Building modern, responsive web applications with cutting-edge technologies and frameworks for optimal user experience.",
+    icon: "html",
     skills: [
-      { name: "React", level: 90, color: "from-cyan-400 to-blue-500" },
-      { name: "Next.js", level: 85, color: "from-gray-800 to-gray-600" },
-      { name: "Node.js", level: 80, color: "from-green-600 to-green-400" },
-      { name: "HTML/CSS", level: 95, color: "from-orange-500 to-red-500" },
-      { name: "Tailwind CSS", level: 90, color: "from-teal-400 to-cyan-500" },
+      { name: "React", icon: "reactjs" },
+      { name: "Next.js", icon: "nextjs" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "Tailwind CSS", icon: "tailwindcss" },
+      { name: "HTML", icon: "html" },
+      { name: "JavaScript", icon: "javascript" }
     ]
   },
   {
-    title: "Databases & Cloud",
+    title: "AI/ML & Data Science", 
+    description: "Developing intelligent systems using machine learning algorithms, neural networks, and advanced data analysis techniques.",
+    icon: "tensorflow",
     skills: [
-      { name: "MongoDB", level: 80, color: "from-green-600 to-green-400" },
-      { name: "PostgreSQL", level: 75, color: "from-blue-600 to-indigo-500" },
-      { name: "AWS", level: 70, color: "from-orange-400 to-yellow-500" },
-      { name: "Docker", level: 75, color: "from-blue-500 to-cyan-500" },
+      { name: "Python", icon: "python" },
+      { name: "TensorFlow", icon: "tensorflow" },
+      { name: "PyTorch", icon: "pytorch" },
+      { name: "Scikit-learn", icon: "scikitlearn" },
+      { name: "Pandas", icon: "pandas" },
+      { name: "NumPy", icon: "numpy" }
     ]
   },
   {
-    title: "Tools & Technologies",
+    title: "Backend Development",
+    description: "Creating robust server-side applications with scalable architectures, APIs, and database management systems.",
+    icon: "nodejs",
     skills: [
-      { name: "Git", level: 90, color: "from-orange-500 to-red-500" },
-      { name: "VS Code", level: 95, color: "from-blue-500 to-cyan-500" },
-      { name: "Jupyter", level: 90, color: "from-orange-400 to-red-500" },
-      { name: "Postman", level: 85, color: "from-orange-500 to-pink-500" },
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Python", icon: "python" },
+      { name: "MongoDB", icon: "mongodb" },
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "Express.js", icon: "expressjs" },
+      { name: "GraphQL", icon: "graphql" }
+    ]
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Deploying and managing applications in cloud environments with automated workflows and containerization.",
+    icon: "amazonwebservices",
+    skills: [
+      { name: "AWS", icon: "amazonwebservices" },
+      { name: "Docker", icon: "docker" },
+      { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github" },
+      { name: "Vercel", icon: "vercel" },
+      { name: "Linux", icon: "linux" }
+    ]
+  },
+  {
+    title: "Mobile Development",
+    description: "Building cross-platform mobile applications with modern frameworks for iOS and Android platforms.",
+    icon: "flutter",
+    skills: [
+      { name: "React Native", icon: "reactnative" },
+      { name: "Flutter", icon: "flutter" },
+      { name: "Expo", icon: "expo" },
+      { name: "Android", icon: "android" },
+      { name: "iOS", icon: "ios" },
+      { name: "Kotlin", icon: "kotlin" }
+    ]
+  },
+  {
+    title: "Tools & Software",
+    description: "Proficient with development tools, IDEs, and software that enhance productivity and code quality.",
+    icon: "visualstudiocode",
+    skills: [
+      { name: "VS Code", icon: "visualstudiocode" },
+      { name: "Jupyter", icon: "jupyter" },
+      { name: "Postman", icon: "postman" },
+      { name: "Figma", icon: "figma" },
+      { name: "Photoshop", icon: "adobephotoshop" },
+      { name: "Slack", icon: "slack" }
     ]
   }
 ]
@@ -108,40 +136,58 @@ export default function Skills() {
         </div>
       </div>
 
-      {/* Skills Sections */}
+      {/* Skills Grid */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="max-w-7xl mx-auto space-y-16">
-          {skillCategories.map((category, categoryIndex) => (
-            <ScrollAnimatedSection key={category.title} delay={categoryIndex * 200}>
-              <div className="bg-black bg-opacity-30 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-gray-800">
-                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
-                  {category.title}
-                </h2>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skill.name} className="space-y-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-white font-medium">{skill.name}</span>
-                        <span className="text-portfolio-green font-semibold">{skill.level}%</span>
-                      </div>
-                      
-                      {/* Skill Progress Bar */}
-                      <div className="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
-                        <div 
-                          className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out skill-bar`}
-                          style={{ 
-                            width: `${skill.level}%`,
-                            animationDelay: `${(categoryIndex * 200) + (skillIndex * 100)}ms`
-                          }}
-                        />
-                      </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {skillCategories.map((category, index) => (
+              <ScrollAnimatedSection key={category.title} delay={index * 150}>
+                <div className="relative bg-white bg-opacity-5 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 transition-all duration-500 ease-out group min-h-[400px] flex flex-col overflow-hidden hover:border-portfolio-green hover:shadow-[0_0_30px_rgba(0,255,136,0.3)]">
+                  {/* Animated Green Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-portfolio-green via-green-400 to-emerald-500 opacity-0 group-hover:opacity-20 transition-all duration-700 ease-out transform scale-0 group-hover:scale-100 rounded-2xl"></div>
+                  
+                  {/* Content Container */}
+                  <div className="relative z-10 flex flex-col h-full">
+                    {/* Icon */}
+                    <div className="mb-6 text-center">
+                      <img 
+                        src={`/icons/${category.icon}.svg`}
+                        alt={category.title}
+                        className="w-16 h-16 mx-auto transition-all duration-500 group-hover:scale-125 group-hover:drop-shadow-[0_0_20px_rgba(0,255,136,0.8)] group-hover:brightness-110"
+                      />
                     </div>
-                  ))}
+                    
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-white mb-4 text-center group-hover:text-white group-hover:drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] transition-all duration-500 transform group-hover:scale-105">
+                      {category.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-gray-400 text-sm mb-6 text-center leading-relaxed group-hover:text-gray-200 transition-all duration-500">
+                      {category.description}
+                    </p>
+                    
+                    {/* Skills Tags */}
+                    <div className="flex flex-wrap gap-3 justify-center mt-auto">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div 
+                          key={skill.name}
+                          className="flex items-center gap-2 px-3 py-2 bg-portfolio-green bg-opacity-20 text-portfolio-green rounded-lg text-xs font-medium border border-portfolio-green border-opacity-30 transition-all duration-300 hover:bg-opacity-40 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,255,136,0.6)] group-hover:bg-white group-hover:bg-opacity-90 group-hover:text-gray-800 group-hover:border-white"
+                        >
+                          <img 
+                            src={`/icons/${skill.icon}.svg`}
+                            alt={skill.name}
+                            className="w-4 h-4 transition-all duration-300 group-hover:drop-shadow-[0_0_5px_rgba(0,0,0,0.3)]"
+                          />
+                          <span className="font-semibold">{skill.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </ScrollAnimatedSection>
-          ))}
+              </ScrollAnimatedSection>
+            ))}
+          </div>
         </div>
       </div>
     </main>

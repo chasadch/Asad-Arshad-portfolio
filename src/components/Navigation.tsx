@@ -87,7 +87,7 @@ const Navigation = () => {
                 }
               }
             }}
-            className="flex items-center space-x-1 text-white hover:text-portfolio-green transition-colors duration-300"
+            className="flex items-center space-x-1 text-white hover:text-portfolio-green transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_8px_rgba(0,255,136,0.5)]"
           >
             <span className="text-xs sm:text-sm font-medium">{item.name}</span>
             {item.hasDropdown && (
@@ -98,7 +98,7 @@ const Navigation = () => {
           </button>
           
           {item.hasDropdown && activeDropdown === item.name && (
-            <div className="absolute top-full left-0 mt-2 w-48 bg-portfolio-gray rounded-lg shadow-xl py-2 z-50">
+            <div className="absolute top-full left-0 mt-2 w-48 bg-portfolio-gray rounded-lg shadow-xl py-2 z-[9999]">
               {item.name === 'Resume' && (
                 <>
                   <button onClick={() => handleNavigation('/resume')} className="block w-full text-left px-4 py-2 text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
@@ -114,9 +114,35 @@ const Navigation = () => {
                   <button onClick={() => handleNavigation('/')} className="block w-full text-left px-4 py-2 text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
                     Landing Page
                   </button>
-                  <a href="#about" className="block px-4 py-2 text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors">
+                  <button 
+                    onClick={async () => {
+                      // Close dropdown first
+                      setActiveDropdown(null)
+                      setClickedDropdown(null)
+                      
+                      // Check if we're on the home page
+                      if (window.location.pathname !== '/') {
+                        // Navigate to home page first
+                        await handleNavigation('/')
+                        // Wait a bit for navigation to complete, then scroll
+                        setTimeout(() => {
+                          const aboutSection = document.getElementById('about')
+                          if (aboutSection) {
+                            aboutSection.scrollIntoView({ behavior: 'smooth' })
+                          }
+                        }, 500)
+                      } else {
+                        // Already on home page, just scroll
+                        const aboutSection = document.getElementById('about')
+                        if (aboutSection) {
+                          aboutSection.scrollIntoView({ behavior: 'smooth' })
+                        }
+                      }
+                    }} 
+                    className="block w-full text-left px-4 py-2 text-sm text-white hover:text-portfolio-green hover:bg-portfolio-dark transition-colors"
+                  >
                     About Me
-                  </a>
+                  </button>
                 </>
               )}
               {item.name === 'Contacts' && (
