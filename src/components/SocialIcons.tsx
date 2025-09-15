@@ -31,7 +31,9 @@ const SocialIcons = () => {
       
       {/* Follow Me Text */}
       <div className="mt-8 transform rotate-90 origin-center">
-        <span className="text-xs text-gray-400 whitespace-nowrap">Follow Me</span>
+        <div className="bg-gradient-to-r from-portfolio-green/20 via-portfolio-green/30 to-portfolio-green/20 backdrop-blur-sm rounded-full px-4 py-2 border border-portfolio-green/30 shadow-lg shadow-portfolio-green/20">
+          <span className="text-xs text-white font-medium whitespace-nowrap">Follow Me</span>
+        </div>
       </div>
     </div>
   )
