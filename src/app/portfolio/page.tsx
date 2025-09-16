@@ -36,7 +36,7 @@ const projects = [
     title: "InLights AI Services",
     description: "AI-enabled web services and products company providing intelligent solutions for businesses across various industries.",
     longDescription: "InLights is a comprehensive AI services platform that delivers cutting-edge web services and AI-powered products. Based in Islamabad, Pakistan, the company specializes in creating intelligent business solutions including web development, AI integration, and custom software development. The platform showcases modern design principles with responsive layouts and interactive elements.",
-    image: "/company website.jpg",
+    image: "/company website .jpg",
     technologies: ["Next.js", "TypeScript", "AI Integration", "Node.js", "PostgreSQL", "AWS"],
     category: "Web Development",
     date: "2024",
