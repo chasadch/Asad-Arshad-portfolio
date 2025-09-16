@@ -69,7 +69,7 @@ export default function Home() {
                     About Me
                   </h2>
                   <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8">
-                    Hi, I'm Muhammad Asad Arshad, a passionate software engineer and AI enthusiast based in Pakistan. I specialize in creating intelligent solutions that solve real-world problems through cutting-edge technology. My expertise spans machine learning, full-stack development, and process automation.
+                    Hi, I&apos;m Muhammad Asad Arshad, a passionate software engineer and AI enthusiast based in Pakistan. I specialize in creating intelligent solutions that solve real-world problems through cutting-edge technology. My expertise spans machine learning, full-stack development, and process automation.
                   </p>
                 </div>
 

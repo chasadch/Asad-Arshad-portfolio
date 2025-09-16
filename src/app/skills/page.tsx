@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import Lottie from 'lottie-react'
 import Header from '@/components/Header'
 import ScrollAnimatedSection from '@/components/ScrollAnimatedSection'
@@ -150,11 +151,14 @@ export default function Skills() {
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Icon */}
                     <div className="mb-6 text-center">
-                      <img 
-                        src={`/icons/${category.icon}.svg`}
-                        alt={category.title}
-                        className="w-16 h-16 mx-auto transition-all duration-500 group-hover:scale-125 group-hover:drop-shadow-[0_0_20px_rgba(0,255,136,0.8)] group-hover:brightness-110"
-                      />
+                      <div className="relative w-16 h-16 mx-auto transition-all duration-500 group-hover:scale-125 group-hover:drop-shadow-[0_0_20px_rgba(0,255,136,0.8)] group-hover:brightness-110">
+                        <Image
+                          src={`/icons/${category.icon}.svg`}
+                          alt={category.title}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                     </div>
                     
                     {/* Title */}
@@ -174,11 +178,14 @@ export default function Skills() {
                           key={skill.name}
                           className="flex items-center gap-2 px-3 py-2 bg-portfolio-green bg-opacity-20 text-portfolio-green rounded-lg text-xs font-medium border border-portfolio-green border-opacity-30 transition-all duration-300 hover:bg-opacity-40 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,255,136,0.6)] group-hover:bg-white group-hover:bg-opacity-90 group-hover:text-gray-800 group-hover:border-white"
                         >
-                          <img 
-                            src={`/icons/${skill.icon}.svg`}
-                            alt={skill.name}
-                            className="w-4 h-4 transition-all duration-300 group-hover:drop-shadow-[0_0_5px_rgba(0,0,0,0.3)]"
-                          />
+                          <div className="relative w-4 h-4 transition-all duration-300 group-hover:drop-shadow-[0_0_5px_rgba(0,0,0,0.3)]">
+                            <Image
+                              src={`/icons/${skill.icon}.svg`}
+                              alt={skill.name}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
                           <span className="font-semibold">{skill.name}</span>
                         </div>
                       ))}
