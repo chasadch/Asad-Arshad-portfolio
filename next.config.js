@@ -17,7 +17,19 @@ const nextConfig = {
   // pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   // Optional: Configure webpack
   webpack: (config, { isServer }) => {
-    // Add your webpack configurations here if needed
+    // Ensure proper resolution of ESM modules
+    config.resolve = {
+      ...config.resolve,
+      extensionAlias: {
+        '.js': ['.js', '.ts', '.tsx'],
+      },
+      fallback: {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+        os: false,
+      }
+    };
     return config;
   },
   // Optional: Configure redirects/rewrites

@@ -1,91 +1,77 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
 import Header from '@/components/Header'
 import ScrollAnimatedSection from '@/components/ScrollAnimatedSection'
 import ContactAnimation from '@/components/ContactAnimation'
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 
-interface FormData {
+type FormData = {
   name: string
   email: string
   subject: string
   message: string
 }
 
-interface FormStatus {
+type FormStatus = {
   type: 'idle' | 'loading' | 'success' | 'error'
   message: string
 }
 
+// Form validation schema
+const formSchema = yup.object().shape({
+  name: yup.string().required('Name is required'),
+  email: yup.string().email('Invalid email').required('Email is required'),
+  subject: yup.string().required('Subject is required'),
+  message: yup.string().required('Message is required').min(10, 'Message should be at least 10 characters')
+})
+
 export default function Contact() {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-  
   const [status, setStatus] = useState<FormStatus>({
     type: 'idle',
     message: ''
   })
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm<FormData>({
+    resolver: yupResolver(formSchema)
+  })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const onSubmit = async (data: FormData) => {
+    setStatus({ type: 'loading', message: 'Sending your message...' })
     
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      setStatus({
-        type: 'error',
-        message: 'Please fill in all required fields.'
-      })
-      return
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(formData.email)) {
-      setStatus({
-        type: 'error',
-        message: 'Please enter a valid email address.'
-      })
-      return
-    }
-
-    setStatus({
-      type: 'loading',
-      message: 'Sending your message...'
-    })
-
-    // Simulate form submission (replace with actual API call)
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      setStatus({
-        type: 'success',
-        message: 'Thank you for your message! I&apos;ll get back to you soon.'
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       })
       
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      })
+      const result = await response.json()
+      
+      if (response.ok) {
+        setStatus({
+          type: 'success',
+          message: 'Your message has been sent successfully! I\'ll get back to you soon.'
+        })
+        reset()
+      } else {
+        throw new Error(result.message || 'Failed to send message')
+      }
     } catch (error) {
+      console.error('Error sending message:', error)
       setStatus({
         type: 'error',
-        message: 'Something went wrong. Please try again later.'
+        message: error instanceof Error ? error.message : 'Failed to send message. Please try again later.'
       })
     }
   }
@@ -94,20 +80,15 @@ export default function Contact() {
     <div className="min-h-screen bg-portfolio-dark text-white">
       <Header />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        {/* Header Section */}
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
         <ScrollAnimatedSection delay={200} direction="fade">
           <div className="text-center mb-12 sm:mb-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Get In <span className="text-portfolio-green">Touch</span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mb-6 sm:mb-8 px-4 sm:px-0">
-              Have a project in mind or want to collaborate? I&apos;d love to hear from you. 
-              Let&apos;s discuss how we can work together to bring your ideas to life.
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Have a project in mind or want to chat? Feel free to reach out to me using the form below.
             </p>
-            
-            {/* Contact Animation */}
-            <ContactAnimation />
           </div>
         </ScrollAnimatedSection>
 
@@ -182,7 +163,7 @@ export default function Contact() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -191,13 +172,11 @@ export default function Contact() {
                     <input
                       type="text"
                       id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
+                      {...register('name')}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-portfolio-dark border border-gray-600 rounded-lg focus:ring-2 focus:ring-portfolio-green focus:border-transparent transition-all duration-300 text-white placeholder-gray-400 text-sm sm:text-base"
                       placeholder="Your full name"
                     />
+                    {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
                   </div>
                   
                   <div>
@@ -207,13 +186,11 @@ export default function Contact() {
                     <input
                       type="email"
                       id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
+                      {...register('email')}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-portfolio-dark border border-gray-600 rounded-lg focus:ring-2 focus:ring-portfolio-green focus:border-transparent transition-all duration-300 text-white placeholder-gray-400 text-sm sm:text-base"
                       placeholder="your.email@example.com"
                     />
+                    {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
                   </div>
                 </div>
 
@@ -224,13 +201,11 @@ export default function Contact() {
                   <input
                     type="text"
                     id="subject"
-                    name="subject"
-                    required
-                    value={formData.subject}
-                    onChange={handleInputChange}
+                    {...register('subject')}
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-portfolio-dark border border-gray-600 rounded-lg focus:ring-2 focus:ring-portfolio-green focus:border-transparent transition-all duration-300 text-white placeholder-gray-400 text-sm sm:text-base"
                     placeholder="What's this about?"
                   />
+                  {errors.subject && <p className="text-red-500 text-sm">{errors.subject.message}</p>}
                 </div>
 
                 <div>
@@ -239,14 +214,12 @@ export default function Contact() {
                   </label>
                   <textarea
                     id="message"
-                    name="message"
-                    required
+                    {...register('message')}
                     rows={5}
-                    value={formData.message}
-                    onChange={handleInputChange}
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-portfolio-dark border border-gray-600 rounded-lg focus:ring-2 focus:ring-portfolio-green focus:border-transparent transition-all duration-300 text-white placeholder-gray-400 resize-vertical text-sm sm:text-base"
                     placeholder="Tell me about your project or idea..."
                   />
+                  {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
                 </div>
 
                 <button
@@ -319,7 +292,7 @@ export default function Contact() {
             </div>
           </div>
         </ScrollAnimatedSection>
-      </div>
+      </main>
     </div>
   )
 }
