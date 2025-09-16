@@ -40,11 +40,11 @@ export default function Resume() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 text-xs sm:text-sm">
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-portfolio-green" />
-                  <span>asadarshad@email.com</span>
+                  <span>asadarshad.4721@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-portfolio-green" />
-                  <span>+92 300 1234567</span>
+                  <span>+92 3041192980</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-portfolio-green" />
