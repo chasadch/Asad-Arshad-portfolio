@@ -1,33 +1,13 @@
 'use client'
 
-import { Download, User, Code, Server, Database, Calendar, ExternalLink, Mail, Phone, MapPin } from 'lucide-react'
+import { User, Code, Server, Database, Calendar, ExternalLink, Mail, Phone, MapPin } from 'lucide-react'
 import Header from '@/components/Header'
 import ScrollAnimatedSection from '@/components/ScrollAnimatedSection'
 
 export default function Resume() {
-  const handleDownload = () => {
-    const link = document.createElement('a')
-    link.href = '/Resume/Asad Arshad CV.pdf'
-    link.download = 'Asad_Arshad_CV.pdf'
-    link.click()
-  }
-
   return (
     <div className="min-h-screen bg-portfolio-dark text-white">
       <Header />
-      {/* Header */}
-      <header className="bg-black bg-opacity-50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
-          <h1 className="text-xl sm:text-2xl font-bold text-portfolio-green text-center sm:text-left">Asad Arshad</h1>
-          <button
-            onClick={handleDownload}
-            className="flex items-center gap-2 bg-portfolio-green text-black px-4 sm:px-6 py-2 rounded-lg hover:bg-green-400 transition-colors font-semibold text-sm sm:text-base"
-          >
-            <Download className="w-4 h-4" />
-            Download CV
-          </button>
-        </div>
-      </header>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Personal Info Section */}
